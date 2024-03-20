@@ -8,28 +8,31 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(50.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text("Sign Up",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-            Text("Create an account,it's free"),
-            SizedBox(height: 30,),
-            InputField(title:"Username" ),
-            InputField(title:"Email" ),
-            InputField(title:"Password" ),
-            InputField(title: "Confirm Password"),
-            ButtonWidget(text: "Sign Up",onPressed: (){Navigator.pop;}),
-          GestureDetector(onTap: (){Navigator.pushReplacementNamed(context, '/Login');},child: RichText(
-            text: TextSpan(
-              text: "Already have an account,",
-              children: const <TextSpan>[
-                TextSpan(text: 'Login', style: TextStyle(fontWeight: FontWeight.bold)),
-              ],
-            ),
-          ))
-          ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Sign Up",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+              Text("Create an account,it's free"),
+              SizedBox(height: 30,),
+              InputField(title:"Username" ),
+              InputField(title:"Email" ),
+              InputField(title:"Password" ),
+              InputField(title: "Confirm Password"),
+              ButtonWidget(text: "Sign Up",onPressed: (){Navigator.pop;}),
+            GestureDetector(onTap: (){Navigator.pushReplacementNamed(context, '/Login');},child: RichText(
+              text: TextSpan(
+                text: "Already have an account,",
+                style: TextStyle(color: Colors.black),
+                children: const <TextSpan>[
+                  TextSpan(text: 'Login', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
+                ],
+              ),
+            ))
+            ],
+          ),
         ),
       ),
     );
